@@ -47,6 +47,16 @@ public class TextEditor {
                     }
                     break;
 
+                case "4":
+                    if (undoStack.isEmpty()) {
+                        System.out.println("Nada para mostrar");
+                    } else {
+                        System.out.println("\n--- Texto actual ---");
+                        System.out.println(undoStack.peek());
+                        System.out.println("--------------------");
+                    }
+                    break;
+
                 case "5":
                     running = false;
                     System.out.println("Saliendo. ¡Hasta luego!");
