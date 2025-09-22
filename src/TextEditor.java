@@ -37,6 +37,16 @@ public class TextEditor {
                     }
                     break;
 
+                case "3":
+                    if (redoStack.isEmpty()) {
+                        System.out.println("Nada para rehacer.");
+                    } else {
+                        String next = redoStack.pop();
+                        undoStack.push(next);
+                        System.out.println("Rehacer aplicado.");
+                    }
+                    break;
+
                 case "5":
                     running = false;
                     System.out.println("Saliendo. ¡Hasta luego!");
