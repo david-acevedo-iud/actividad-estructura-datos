@@ -27,6 +27,16 @@ public class TextEditor {
                     System.out.println("Texto agregado.");
                     break;
 
+                case "2":
+                    if (undoStack.isEmpty()) {
+                        System.out.println("Nada para deshacer.");
+                    } else {
+                        String prev = undoStack.pop();
+                        redoStack.push(prev);
+                        System.out.println("Deshacer realizado.");
+                    }
+                    break;
+
                 case "5":
                     running = false;
                     System.out.println("Saliendo. ¡Hasta luego!");
