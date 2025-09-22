@@ -1,8 +1,12 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 public class TextEditor {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in, "UTF-8");
+
+        Stack<String> undoStack = new Stack<>();
+        Stack<String> redoStack = new Stack<>();
 
         boolean running = true;
         while (running) {
@@ -16,6 +20,13 @@ public class TextEditor {
 
             String option = sc.nextLine().trim();
             switch (option) {
+                case "1":
+                    System.out.print("\nEscribe el texto a agregar: ");
+                    String toAdd = sc.nextLine();
+                    undoStack.push(toAdd);
+                    System.out.println("Texto agregado.");
+                    break;
+
                 case "5":
                     running = false;
                     System.out.println("Saliendo. ¡Hasta luego!");
